@@ -1,0 +1,16 @@
+Task ID,Task Name,Owner,Priority,Initial Column,Notes
+T-01,Create GitHub repository,Thesopan Sathiyanantham,High,Done,Create repo named budgetbridge-expense-tracker.
+T-02,Create README skeleton,Ravishan Thanarajah,High,Ready,"Add project description, team, stack, features, and run instructions placeholders."
+T-03,Create GitHub Project Kanban board,Rafay Khan,High,Ready,"Board must include Backlog, Ready, In Progress, In Review, Done."
+T-04,Create activity blog page,Jana Nazer,High,Ready,Create GitHub Wiki page or docs/activity-blog.md.
+T-05,Finalize project scope,Thesopan Sathiyanantham,High,Done,Confirm in-scope and out-of-scope features.
+T-06,Write project proposal,Jana Nazer,High,In Review,Draft proposal and send to group for review.
+T-07,Write user stories,Thesopan Sathiyanantham,High,In Review,Make sure stories include acceptance criteria.
+T-08,Create wireframes,Tahmina Faez,High,In Progress,"Create screens for login, dashboard, transactions, categories, reports."
+T-09,Draft data planning section,Noor Ehsan,High,In Progress,Identify entities and relationships.
+T-10,Plan authentication flow,Aditya Arun Kumar,High,Ready,"Plan register, login, logout routes."
+T-11,Plan front-end screens,Fisher Matichuk,High,Ready,Plan HTML/CSS/JS pages for main workflow.
+T-12,Prepare test checklist,Rida Shahid,Medium,Ready,Create validation and workflow test cases.
+T-13,Plan reports feature,Sahil Minhas,Medium,Backlog,Plan category summary and date range summary.
+T-14,Review final Milestone 01 report,All Members,High,Ready,Group review before submission.
+T-15,Prepare links.txt,Thesopan Sathiyanantham,High,Ready,"Add repo, project board, and wiki/docs links."
