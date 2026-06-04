@@ -66,7 +66,7 @@ The team reviewed the project proposal, user stories, wireframes, data planning 
 * Product backlog and user stories completed
 * Wireframes completed
 * Initial data planning completed
-* GitHub repository and Kanban board updated
+* GitHub repository and Kanban board updated (Using Github Projects)
 * Activity blog updated
 * links.txt prepared
 
