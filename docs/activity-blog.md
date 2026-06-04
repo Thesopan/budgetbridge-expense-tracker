@@ -43,3 +43,53 @@ The main challenge was keeping the project realistic. The team discussed extra f
 - Add README skeleton
 - Add activity blog file or wiki page
 - Finalize Milestone 01 PDF and links.txt
+
+
+## Planning Meeting 02
+
+**Date:** ThursDay, June 4, 2026
+**Time:** 1:00 PM
+**Location:** iMessage
+**Attendees:** Group #6 members
+
+### Purpose
+
+The purpose of this meeting was to review the completion of Milestone 01 deliverables, verify documentation, and prepare the final submission package.
+
+### Summary
+
+The team reviewed the project proposal, user stories, wireframes, data planning section, GitHub repository, Kanban board, and activity blog. Minor revisions were made to improve consistency between the report and project documentation. The team also verified that all required links were included in the links.txt file.
+
+### Progress Completed
+
+* Project proposal completed
+* Product backlog and user stories completed
+* Wireframes completed
+* Initial data planning completed
+* GitHub repository and Kanban board updated
+* Activity blog updated
+* links.txt prepared
+
+### Contributions
+
+* Thesopan coordinated project planning and reviewed deliverables.
+* Fisher assisted with front-end planning.
+* Noor completed database planning.
+* Tahmina completed wireframes and navigation flow.
+* Sahil contributed to reports and summary feature planning.
+* Jana finalized documentation and activity blog updates.
+* Remaining team members reviewed and provided feedback on Milestone 01 materials.
+
+### Challenges
+
+The main challenge was ensuring consistency between the backlog, wireframes, and project report. The team reviewed each section to confirm that planned features matched the documented requirements.
+
+### Next Steps
+
+* Begin database schema design
+* Plan authentication implementation
+* Set up the Node.js project structure
+* Start Sprint 1 development tasks
+* Continue updating the Kanban board throughout Milestone 02
+
+
