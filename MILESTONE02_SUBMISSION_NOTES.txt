@@ -1,0 +1,14 @@
+BudgetBridge Milestone 02 Submission Notes
+
+Due date: Friday, June 26, 2026
+
+Before submitting:
+1. Upload the contents of this project folder to the GitHub repository.
+2. Update the GitHub Projects Kanban board so tasks show meaningful movement.
+3. Confirm docs/activity-blog.md has the two new Milestone 02 progress entries.
+4. Confirm docs/milestone02-database-design.pdf opens correctly.
+5. Confirm README.md has run instructions.
+6. Confirm links.txt has the repo, project board, and docs/activity blog links.
+
+Recommended final ZIP name:
+Sathiyanantham_Thesopan_169060043__M2.zip

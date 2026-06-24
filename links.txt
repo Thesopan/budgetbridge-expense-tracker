@@ -1,0 +1,8 @@
+GitHub Repository:
+https://github.com/Thesopan/budgetbridge-expense-tracker
+
+GitHub Project Board:
+https://github.com/users/Thesopan/projects/1/views/1
+
+Wiki / Activity Blog / Documentation:
+https://github.com/Thesopan/budgetbridge-expense-tracker/blob/main/docs/activity-blog.md

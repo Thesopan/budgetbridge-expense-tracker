@@ -1,25 +1,20 @@
-# Activity Blog
+# BudgetBridge Activity Blog
 
-## Planning Meeting 01
+## Planning Meeting 01 - Milestone 01 Setup
 
 **Date:** Wednesday, June 3, 2026  
-**Time:** 7:00 PM  
 **Location:** iMessage  
-**Attendees:** Group #6 members
-
-### Purpose
-The purpose of this meeting was to choose the project topic, define the initial scope, assign responsibilities, and begin Milestone 01 planning.
+**Attendees:** Group 6 members
 
 ### Summary
-The team selected **BudgetBridge: Personal Expense Tracker**. The idea was chosen because it has a realistic scope, clear CRUD operations, meaningful validation, and a relational database structure. The project will let users register, log in, add income and expense transactions, organize them by category, and view summaries.
+The group selected the Personal Expense Tracker idea and named the project BudgetBridge. The team agreed that the application should focus on a realistic workflow: user registration, login, adding transactions, viewing transactions, filtering records, managing categories, and viewing reports.
 
-### Major Decisions
-- Project topic: Personal Expense Tracker
+### Decisions
 - Project name: BudgetBridge
-- Stack: HTML, CSS, JavaScript, Node.js, MySQL
+- Technology direction: HTML, CSS, JavaScript, Node.js, MySQL
 - Communication: iMessage
-- Meeting cadence: Wednesdays and Saturdays at 7:00 PM
-- Out of scope: bank syncing, real payment processing, receipt scanning, mobile app, investment tracking
+- Meeting cadence: Wednesdays and Saturdays at 7 PM
+- Kanban columns: Backlog, Ready, In Progress, In Review, Done
 
 ### Initial Assignments
 - Thesopan Sathiyanantham: Scrum Master / Project Coordinator
@@ -28,68 +23,64 @@ The team selected **BudgetBridge: Personal Expense Tracker**. The idea was chose
 - Noor Ehsan: Database Lead
 - Jana Nazer: Documentation / Activity Blog Lead
 - Rida Shahid: Testing / QA Lead
-- Tahmina Faez: UI/UX and Wireframe Support
+- Tahmina Faez: UI/UX Support
 - Rafay Khan: GitHub / Kanban Support
-- Sahil Minhas: Reports / Summary Feature Support
+- Sahil Minhas: Reports Support
 - Ravishan Thanarajah: README / Review Support
 
-### Challenges
-The main challenge was keeping the project realistic. The team discussed extra features but agreed to prioritize the core full-stack workflow first.
+---
+
+## Progress Entry 02 - Milestone 02 Front-End Implementation
+
+**Date:** Saturday, June 13, 2026  
+**Location:** iMessage  
+**Attendees:** Group 6 members
+
+### Work Completed
+The team reviewed Milestone 01 feedback and noted that the wireframes needed stronger coverage for each user story. To address this, the Milestone 02 implementation includes a screen or visible UI action for each major story, including registration, login, logout, dashboard summary, transaction CRUD, category management, filtering, searching, reports, and settings.
+
+The front-end was implemented using separate HTML pages with a shared CSS file and JavaScript file. The screens include login, registration, dashboard, transactions list, add transaction, edit transaction, categories, reports, and settings. Mock data is used through browser localStorage so the workflow can be demonstrated before full database integration.
+
+### Decisions Made
+- Separate HTML pages were selected instead of a single-page app because they are easier to inspect and match the course expectations.
+- JavaScript localStorage is used only for Milestone 02 mock workflow behavior.
+- The visual design follows the Milestone 01 Figma-style wireframes.
+- A settings page was added to ensure the account settings user story has a matching screen.
+
+### Blockers / Resolutions
+- Blocker: The group needed to ensure all user stories were visible in the workflow.
+- Resolution: Added the settings screen and made sure transaction filtering, searching, editing, deleting, and reports are all represented in the UI.
 
 ### Next Steps
-- Create GitHub repository
-- Create GitHub Projects Kanban board
-- Add required columns and tasks
-- Add README skeleton
-- Add activity blog file or wiki page
-- Finalize Milestone 01 PDF and links.txt
+- Test each front-end page.
+- Confirm that navigation works across screens.
+- Prepare database design PDF and SQL schema.
 
+---
 
-## Planning Meeting 02
+## Progress Entry 03 - Milestone 02 Database and Back-End Setup
 
-**Date:** ThursDay, June 4, 2026
-**Time:** 1:00 PM
-**Location:** iMessage
-**Attendees:** Group #6 members
+**Date:** Wednesday, June 17, 2026  
+**Location:** iMessage  
+**Attendees:** Group 6 members
 
-### Purpose
+### Work Completed
+The database design was completed for the main BudgetBridge workflow. The schema includes users, categories, transactions, user sessions, budgets, and activity logs. The design uses foreign keys, constraints, unique rules, and indexes to support data integrity and efficient queries.
 
-The purpose of this meeting was to review the completion of Milestone 01 deliverables, verify documentation, and prepare the final submission package.
+A Node.js backend skeleton was also created. The backend includes a runnable `server.js` entry point and separate route/controller files for authentication, transactions, categories, and reports. The endpoints currently return stub responses because full database integration is planned for Milestone 03.
 
-### Summary
+### Decisions Made
+- MySQL remains the database target.
+- Node.js was selected for the backend skeleton.
+- No external front-end frameworks were used.
+- Backend route/controller separation was added to make Milestone 03 integration easier.
 
-The team reviewed the project proposal, user stories, wireframes, data planning section, GitHub repository, Kanban board, and activity blog. Minor revisions were made to improve consistency between the report and project documentation. The team also verified that all required links were included in the links.txt file.
-
-### Progress Completed
-
-* Project proposal completed
-* Product backlog and user stories completed
-* Wireframes completed
-* Initial data planning completed
-* GitHub repository and Kanban board updated (Using Github Projects)
-* Activity blog updated
-* links.txt prepared
-
-### Contributions
-
-* Thesopan coordinated project planning and reviewed deliverables.
-* Fisher assisted with front-end planning.
-* Noor completed database planning.
-* Tahmina completed wireframes and navigation flow.
-* Sahil contributed to reports and summary feature planning.
-* Jana finalized documentation and activity blog updates.
-* Remaining team members reviewed and provided feedback on Milestone 01 materials.
-
-### Challenges
-
-The main challenge was ensuring consistency between the backlog, wireframes, and project report. The team reviewed each section to confirm that planned features matched the documented requirements.
+### Blockers / Resolutions
+- Blocker: The group wanted to avoid using unapproved frameworks.
+- Resolution: The backend uses the built-in Node.js HTTP module and the front-end uses plain HTML, CSS, and JavaScript.
 
 ### Next Steps
-
-* Begin database schema design
-* Plan authentication implementation
-* Set up the Node.js project structure
-* Start Sprint 1 development tasks
-* Continue updating the Kanban board throughout Milestone 02
-
-
+- Upload all Milestone 02 files to GitHub.
+- Move Kanban tasks into meaningful updated columns.
+- Confirm README run instructions are accurate.
+- Prepare the final Milestone 02 ZIP with the database PDF and links.txt.
