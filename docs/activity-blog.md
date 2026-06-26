@@ -84,3 +84,60 @@ A Node.js backend skeleton was also created. The backend includes a runnable `se
 - Move Kanban tasks into meaningful updated columns.
 - Confirm README run instructions are accurate.
 - Prepare the final Milestone 02 ZIP with the database PDF and links.txt.
+
+---
+
+## Progress Entry 04 - Milestone 02 Final Review
+
+**Date:** Friday, June 26, 2026  
+**Location:** iMessage  
+**Attendees:** Group 6 members
+
+### Work Completed
+
+- Completed front-end implementation for registration, login, dashboard, transactions, categories, reports, and settings pages.
+- Added navigation between all application screens using shared HTML, CSS, and JavaScript.
+- Implemented mock workflow using JavaScript and localStorage to simulate application functionality.
+- Created a Node.js backend skeleton with a runnable `server.js` entry point.
+- Added authentication, transaction, category, and reports route/controller files with API stub endpoints.
+- Finalized the MySQL database schema, ER diagram, and SQL `CREATE TABLE` statements.
+- Added primary keys, foreign keys, constraints, and indexes to support the application database.
+- Updated the README with project structure, setup instructions, API endpoints, and team contributions.
+- Updated the GitHub Project Kanban board to reflect completed Milestone 02 implementation tasks.
+- Updated the activity blog with milestone progress and project decisions.
+- Reviewed the project against the Milestone 02 requirements and prepared the final submission package.
+
+### Decisions Made
+
+- The backend will remain a Node.js application for Milestone 03.
+- The database schema will use MySQL and support users, categories, transactions, user sessions, and activity logs.
+- Mock front-end data will be replaced with database-backed data in Milestone 03.
+- The Kanban board will continue to be updated as integration and testing work begins.
+
+### Blockers / Resolutions
+
+- Blocker: Keeping the front-end implementation, database design, and project documentation consistent as new features were added.
+- Resolution: The team reviewed the wireframes, README, database design package, and GitHub repository together to ensure all deliverables reflected the same application workflow.
+
+- Blocker: Maintaining a consistent user interface across all application pages.
+- Resolution: Using a shared stylesheet and common navigation layout to create a consistent look and user experience.
+
+- Blocker: Need to make sure all Milestone 02 deliverables matched the assignment rubric.
+- Resolution: The group reviewed the rubric item by item and updated the README, activity blog, database design package, GitHub repository, and Kanban board where needed.
+
+### Next Steps
+
+- Connect the front-end pages to the backend API.
+- Connect the backend to the MySQL database.
+- Replace mock data with real database queries.
+- Implement user authentication and session management.
+- Complete server-side validation.
+- Begin preparing the Milestone 03 testing report and final demo.
+
+
+
+
+
+
+
+
