@@ -4,7 +4,7 @@
 
 **Date:** Wednesday, June 3, 2026  
 **Location:** iMessage  
-**Attendees:** Group 6 members
+**Attendees:** Group 9 members
 
 ### Summary
 The group selected the Personal Expense Tracker idea and named the project BudgetBridge. The team agreed that the application should focus on a realistic workflow: user registration, login, adding transactions, viewing transactions, filtering records, managing categories, and viewing reports.
