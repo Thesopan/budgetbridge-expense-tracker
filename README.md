@@ -126,16 +126,15 @@ docs/milestone02-database-design.pdf
 
 ## Team Member Contributions Summary
 
-- Thesopan Sathiyanantham - Scrum Master / Project Coordinator: milestone coordination, GitHub tracking, workflow review
+- Thesopan Sathiyanantham - Scrum Master / Project Coordinator: milestone coordination, GitHub tracking, workflow review and README
 - Aditya Arun Kumar - Back-End Lead: backend skeleton planning and route/controller structure
 - Fisher Matichuk - Front-End Lead: front-end screen layout and navigation workflow
-- Noor Ehsan - Database Lead: database schema and ERD planning
+- Noor Ehsan - Database Lead: database schema and ERD planning, Review Support: README review and final packaging check
 - Jana Nazer - Documentation / Activity Blog Lead: activity blog and documentation updates
 - Rida Shahid - Testing / QA Lead: validation checks and front-end workflow review
 - Tahmina Faez - UI/UX and Wireframe Support: UI consistency and screen matching
 - Rafay Khan - GitHub / Kanban Support: Kanban updates and task status tracking
 - Sahil Minhas - Reports / Summary Feature Support: reports page and summary workflow review
-- Ravishan Thanarajah - README / Review Support: README review and final packaging check
 
 ## Notes for Milestone 03
 
