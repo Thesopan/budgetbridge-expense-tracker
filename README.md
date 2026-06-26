@@ -134,7 +134,7 @@ docs/milestone02-database-design.pdf
 - Rida Shahid - Testing / QA Lead: validation checks and front-end workflow review
 - Tahmina Faez - UI/UX and Wireframe Support: UI consistency and screen matching
 - Rafay Khan - GitHub / Kanban Support: Kanban updates and task status tracking
-- Sahil Minhas - Reports / Summary Feature Support: reports page and summary workflow review
+- Sahil Minhas - Reports / Summary Feature Support: reports page and summary workflow review. Kanban and acitivty blog updates
 
 ## Notes for Milestone 03
 
