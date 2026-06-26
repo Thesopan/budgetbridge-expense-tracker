@@ -30,7 +30,54 @@ The group selected the Personal Expense Tracker idea and named the project Budge
 
 ---
 
-## Progress Entry 02 - Milestone 02 Front-End Implementation
+## Planning Meeting 02
+
+**Date:** ThursDay, June 4, 2026
+**Time:** 1:00 PM
+**Location:** iMessage
+**Attendees:** Group #6 members
+
+### Purpose
+
+The purpose of this meeting was to review the completion of Milestone 01 deliverables, verify documentation, and prepare the final submission package.
+
+### Summary
+
+The team reviewed the project proposal, user stories, wireframes, data planning section, GitHub repository, Kanban board, and activity blog. Minor revisions were made to improve consistency between the report and project documentation. The team also verified that all required links were included in the links.txt file.
+
+### Progress Completed
+
+* Project proposal completed
+* Product backlog and user stories completed
+* Wireframes completed
+* Initial data planning completed
+* GitHub repository and Kanban board updated (Using Github Projects)
+* Activity blog updated
+* links.txt prepared
+
+### Contributions
+
+* Thesopan coordinated project planning and reviewed deliverables.
+* Fisher assisted with front-end planning.
+* Noor completed database planning.
+* Tahmina completed wireframes and navigation flow.
+* Sahil contributed to reports and summary feature planning.
+* Jana finalized documentation and activity blog updates.
+* Remaining team members reviewed and provided feedback on Milestone 01 materials.
+
+### Challenges
+
+The main challenge was ensuring consistency between the backlog, wireframes, and project report. The team reviewed each section to confirm that planned features matched the documented requirements.
+
+### Next Steps
+
+* Begin database schema design
+* Plan authentication implementation
+* Set up the Node.js project structure
+* Start Sprint 1 development tasks
+* Continue updating the Kanban board throughout Milestone 02
+
+## Progress Entry 03 - Milestone 02 Front-End Implementation
 
 **Date:** Saturday, June 13, 2026  
 **Location:** iMessage  
@@ -58,7 +105,7 @@ The front-end was implemented using separate HTML pages with a shared CSS file a
 
 ---
 
-## Progress Entry 03 - Milestone 02 Database and Back-End Setup
+## Progress Entry 04 - Milestone 02 Database and Back-End Setup
 
 **Date:** Wednesday, June 17, 2026  
 **Location:** iMessage  
@@ -87,7 +134,7 @@ A Node.js backend skeleton was also created. The backend includes a runnable `se
 
 ---
 
-## Progress Entry 04 - Milestone 02 Final Review
+## Progress Entry 05 - Milestone 02 Final Review
 
 **Date:** Friday, June 26, 2026  
 **Location:** iMessage  
