@@ -4,6 +4,16 @@
 
 BudgetBridge is a full-stack personal expense tracker designed for students and young adults who want to record income, track expenses, organize transactions by category, and view financial summaries.
 
+The following screenshots demonstrate some user interfaces implemented during Milestone 02.
+
+| Login | Dashboard |
+|--------|-----------|
+| ![](docs/screenshots/login.png) | ![](docs/screenshots/dashboard.png) |
+
+| Reports | Categories |
+|----------|------------|
+| ![](docs/screenshots/reports.png) | ![](docs/screenshots/categories.png) |
+
 ## Milestone 02 Status
 
 This milestone includes:
