@@ -18,6 +18,7 @@ This milestone includes:
 - MySQL database schema with primary keys, foreign keys, constraints, and indexes
 - Database design PDF in `/docs`
 - Updated activity blog in `/docs/activity-blog.md`
+- Updated Kanban in GitHub Projects
 
 ## Technology Stack
 
