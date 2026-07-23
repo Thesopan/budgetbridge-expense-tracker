@@ -114,14 +114,6 @@ The database design was refined to avoid storing transaction type twice. Transac
 - The demo will show registration, transaction CRUD, category management, reports, validation, and one testing example.
 - The final ZIP will contain the testing report, presentation artifact, `links.txt`, and the Teams/OneDrive demo video link.
 
-## Final Reflection
-
-BudgetBridge progressed from a planning document into a complete database-backed application. The most important architecture decision was separating the front end, controllers, routes, validation/security utilities, and data stores. This made the code easier to test and prevented the front end from directly handling database responsibilities.
-
-The largest challenge was replacing Milestone 02 mock data without breaking the existing screen workflow. The group resolved this by preserving the page structure and replacing localStorage operations with consistent API calls. The database schema and server-side ownership checks ensure that one user cannot view or modify another user's financial records.
-
-The project remains intentionally focused. It does not connect to banks, send password-reset emails, or provide investment advice. Those features would require additional services and security controls beyond the course scope. The final result satisfies the core CRUD, database integration, validation, testing, documentation, and demonstration requirements while remaining understandable and maintainable.
-
 ---
 
 ## Progress Entry 09 - Final MySQL Verification and Defect Resolution
