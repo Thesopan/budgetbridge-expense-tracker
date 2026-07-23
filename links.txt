@@ -1,8 +1,16 @@
+BudgetBridge - CP476B Group 6 Final Links
+
 GitHub Repository:
 https://github.com/Thesopan/budgetbridge-expense-tracker
 
 GitHub Project Board:
-https://github.com/users/Thesopan/projects/1/views/1
+https://github.com/Thesopan/budgetbridge-expense-tracker/projects
 
-Wiki / Activity Blog / Documentation:
+Activity Blog / Project Documentation:
 https://github.com/Thesopan/budgetbridge-expense-tracker/blob/main/docs/activity-blog.md
+
+Final Kanban Snapshot:
+https://github.com/Thesopan/budgetbridge-expense-tracker/blob/main/docs/final-kanban-update.md
+
+README / Clean-Machine Setup:
+https://github.com/Thesopan/budgetbridge-expense-tracker/blob/main/README.md

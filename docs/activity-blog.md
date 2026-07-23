@@ -121,3 +121,38 @@ BudgetBridge progressed from a planning document into a complete database-backed
 The largest challenge was replacing Milestone 02 mock data without breaking the existing screen workflow. The group resolved this by preserving the page structure and replacing localStorage operations with consistent API calls. The database schema and server-side ownership checks ensure that one user cannot view or modify another user's financial records.
 
 The project remains intentionally focused. It does not connect to banks, send password-reset emails, or provide investment advice. Those features would require additional services and security controls beyond the course scope. The final result satisfies the core CRUD, database integration, validation, testing, documentation, and demonstration requirements while remaining understandable and maintainable.
+
+---
+
+## Progress Entry 09 - Final MySQL Verification and Defect Resolution
+
+**Date:** Thursday, July 23, 2026  
+**Location:** MySQL Workbench, local Windows development environment, and iMessage  
+**Attendees:** Group 6 members
+
+### Final Verification Completed
+
+The final database was created in MySQL 8.x using `database/schema.sql`. Workbench showed the five required tables: `users`, `categories`, `transactions`, `user_sessions`, and `activity_logs`. The application then started in MySQL mode and successfully preserved account and transaction data after logout and login.
+
+The team verified the main database-backed workflow through the browser: registration and login, adding income and expense transactions, viewing dashboard totals, editing a transaction, creating a custom category, and generating a report for a selected date range. The final automated suite was also rerun and produced 12 passing tests with no failures.
+
+### Defect Found and Resolution
+
+During the final report verification, MySQL returned `ER_WRONG_ARGUMENTS: Incorrect arguments to mysqld_stmt_execute`. The error was isolated to the recent-transactions query, where a prepared placeholder was used in `LIMIT ?`.
+
+The data-store code was corrected by parsing and validating the limit as an integer between 1 and 100 before adding it to the SQL statement. All user-controlled filter values remain parameterized. After restarting the server, the Reports page displayed income, expenses, balance, and spending by category correctly.
+
+### Final Evidence Prepared
+
+- MySQL schema and final tables captured
+- Dashboard and report results captured
+- Automated test output captured: 12 passed, 0 failed
+- Final README, testing report, Kanban snapshot, and overview completed
+- Final demo video assembled with the three presenter recordings
+- Final MyLS ZIP and GitHub upload package prepared
+
+## Final Reflection - Milestone 03 Completion
+
+The final milestone confirmed the value of separating routes, controllers, validation, security utilities, and data-store logic. That separation made the prepared-statement issue easy to isolate without changing the user interface or controller behavior. It also allowed the automated suite to exercise the complete business workflow with repeatable test data while the final application continued to use MySQL.
+
+BudgetBridge now demonstrates the required end-to-end workflow, database-backed CRUD, user isolation, input validation, authentication, reporting, testing evidence, and clean-machine documentation. The remaining product limitations are intentional course-scope decisions: local deployment, Canadian-dollar display, no bank synchronization, no email password reset, and no multi-factor authentication.

@@ -195,7 +195,12 @@ class MySQLStore {
       params.push(`%${filters.search}%`, `%${filters.search}%`);
     }
     let sql = `${this._transactionSelect()} WHERE ${conditions.join(' AND ')} ORDER BY t.transaction_date DESC, t.transaction_id DESC`;
-    if (filters.limit) { sql += ' LIMIT ?'; params.push(filters.limit); }
+    if (filters.limit) {
+      const limit = Number.parseInt(filters.limit, 10);
+      if (Number.isInteger(limit) && limit > 0 && limit <= 100) {
+        sql += ` LIMIT ${limit}`;
+      }
+    }
     const [rows] = await this.pool.execute(sql, params);
     return rows;
   }
