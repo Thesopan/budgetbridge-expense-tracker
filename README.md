@@ -1,152 +1,192 @@
 # BudgetBridge: Personal Expense Tracker
 
-## CP476B Group 6 - Milestone 02
+## CP476B Group 6 - Milestone 03 Final
 
-BudgetBridge is a full-stack personal expense tracker designed for students and young adults who want to record income, track expenses, organize transactions by category, and view financial summaries.
+BudgetBridge is a full-stack web application for recording income and expenses, organizing transactions by category, and viewing financial summaries. The final version connects a plain HTML/CSS/JavaScript front end to a Node.js API and a normalized MySQL database.
 
-The following screenshots demonstrate some user interfaces implemented during Milestone 02.
+## Final Features
 
-| Login | Dashboard |
-|--------|-----------|
-| ![](docs/screenshots/login.png) | ![](docs/screenshots/dashboard.png) |
-
-| Reports | Categories |
-|----------|------------|
-| ![](docs/screenshots/reports.png) | ![](docs/screenshots/categories.png) |
-
-## Milestone 02 Status
-
-This milestone includes:
-
-- Working front-end screens matching the Milestone 01 wireframes
-- Functional UI workflow using mock data through JavaScript/localStorage
-- Add, view, edit, delete, search, and filter transaction interactions
-- Category management UI
-- Reports page with category summaries
-- Account settings page to cover the settings user story
-- Node.js backend skeleton with route/controller structure
-- MySQL database schema with primary keys, foreign keys, constraints, and indexes
-- Database design PDF in `/docs`
-- Updated activity blog in `/docs/activity-blog.md`
-- Updated Kanban in GitHub Projects
+- Secure account registration, login, logout, and session checks
+- Password hashing with Node.js `crypto.scrypt`
+- HTTP-only, SameSite session cookie with hashed session tokens in MySQL
+- User-specific transaction create, read, update, and delete operations
+- User-specific custom category create, update, and delete operations
+- Search and filtering by type, category, date range, and description
+- Dashboard totals and recent transactions from the database
+- Reports with date-range totals and spending grouped by category
+- Profile and password updates
+- Server-side validation, parameterized SQL, ownership checks, security headers, and request-size limits
+- Automated tests using Node's built-in test runner
 
 ## Technology Stack
 
-- Front-End: HTML, CSS, JavaScript
-- Back-End: Node.js using the built-in HTTP module
-- Database Design: MySQL
-- Project Management: GitHub Projects Kanban
-- Documentation: Markdown and PDF
+- Front end: HTML, CSS, JavaScript
+- Back end: Node.js built-in HTTP module
+- Database: MySQL 8.x through the `mysql2` driver
+- Security: Node.js `crypto`, parameterized queries, HTTP-only cookies
+- Project tracking: GitHub Projects Kanban
 
-No front-end frameworks or outside UI libraries are used.
+No front-end framework or UI library is used.
 
 ## Project Structure
 
 ```text
 budgetbridge-expense-tracker/
-├── public/
-│   ├── index.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── transactions.html
-│   ├── add-transaction.html
-│   ├── edit-transaction.html
-│   ├── categories.html
-│   ├── reports.html
-│   ├── settings.html
-│   ├── css/style.css
-│   └── js/app.js
 ├── backend/
-│   ├── server.js
+│   ├── controllers/
+│   ├── data/
 │   ├── routes/
-│   └── controllers/
+│   ├── utils/
+│   ├── config.js
+│   └── server.js
 ├── database/
-│   ├── schema.sql
-│   └── erd-description.md
+│   └── schema.sql
 ├── docs/
 │   ├── activity-blog.md
-│   └── milestone02-database-design.pdf
+│   ├── testing-summary-report.pdf
+│   ├── budgetbridge-final-overview.pdf
+│   ├── demo-video-script.md
+│   └── final-kanban-update.md
+├── public/
+│   ├── css/style.css
+│   ├── js/app.js
+│   └── *.html
+├── tests/
+├── .env.example
 ├── package.json
-├── README.md
-└── links.txt
+└── README.md
 ```
 
-## How to Run Locally
+## Clean Machine Setup
 
-### Option 1: Open the front-end directly
+### Prerequisites
 
-1. Open the `public` folder.
-2. Double-click `index.html`.
-3. Use the login form to enter any valid email and a password with at least 4 characters.
-4. Navigate through the dashboard, transactions, categories, reports, and settings pages.
+- Node.js 18 or newer
+- MySQL 8.x
+- A terminal and modern web browser
 
-### Option 2: Run with Node.js server
+### 1. Download and open the project
 
-1. Install Node.js if it is not installed.
-2. Open a terminal in the project root folder.
-3. Run:
+```bash
+cd budgetbridge-expense-tracker
+```
+
+### 2. Install the database driver
+
+```bash
+npm install
+```
+
+### 3. Create the database
+
+Run `database/schema.sql` in MySQL Workbench, phpMyAdmin, or the MySQL command line. The script recreates the `budgetbridge_db` database and all required tables.
+
+Command-line example:
+
+```bash
+mysql -u root -p < database/schema.sql
+```
+
+### 4. Configure the application
+
+Copy `.env.example` to `.env` and enter your MySQL credentials:
+
+```text
+PORT=3000
+NODE_ENV=development
+DB_MODE=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=budgetbridge_db
+SESSION_DAYS=7
+```
+
+### 5. Start BudgetBridge
 
 ```bash
 npm start
 ```
 
-4. Open this URL in a browser:
+Open:
 
 ```text
 http://localhost:3000
 ```
 
-## Backend API Stubs
+Register a new account. The application automatically creates default income and expense categories for that user.
 
-The backend is a runnable skeleton for Milestone 02. It includes stub endpoints for future Milestone 03 integration.
+## Development / Automated Test Mode
+
+The following mode uses an in-memory relational-style store for automated tests and UI review. It does not replace the required MySQL setup for the final project demo.
+
+```bash
+npm run start:memory
+```
+
+Run automated tests:
+
+```bash
+npm test
+```
+
+## API Endpoints
 
 ```text
-POST   /api/auth/login
 POST   /api/auth/register
+POST   /api/auth/login
+POST   /api/auth/logout
+GET    /api/auth/session
+
 GET    /api/transactions
+GET    /api/transactions/:id
 POST   /api/transactions
-PUT    /api/transactions?id=1
-DELETE /api/transactions?id=1
+PUT    /api/transactions/:id
+DELETE /api/transactions/:id
+
 GET    /api/categories
 POST   /api/categories
+PUT    /api/categories/:id
+DELETE /api/categories/:id
+
 GET    /api/reports/summary
+GET    /api/user/profile
+PUT    /api/user/profile
+PUT    /api/user/password
 ```
 
-## Database Setup
+## Validation and Security Hygiene
 
-The database schema is located at:
+- Passwords are never stored in plain text.
+- SQL values use placeholders through `mysql2`, reducing SQL injection risk.
+- Every transaction and category query includes the authenticated user's ID.
+- Raw session tokens are stored only in an HTTP-only cookie; MySQL stores SHA-256 token hashes.
+- State-changing requests are same-origin checked.
+- Security headers include CSP, frame blocking, MIME sniffing prevention, and restrictive permissions.
+- The server rejects oversized or invalid JSON request bodies.
+- Default categories cannot be edited or deleted, and categories in use cannot be deleted.
 
-```text
-database/schema.sql
-```
+## Known Limitations
 
-It contains MySQL `CREATE TABLE` statements for:
+- BudgetBridge is designed for local course demonstration and is not deployed to a public host.
+- Currency is displayed as Canadian dollars only.
+- Password reset by email and multi-factor authentication are outside the approved project scope.
+- Reports provide category totals rather than advanced financial forecasting.
 
-- users
-- categories
-- transactions
-- user_sessions
-- budgets
-- activity_logs
+## Team Contributions
 
-The database design PDF is located at:
+- **Thesopan Sathiyanantham** - Scrum Master / Project Coordinator: milestone coordination, final integration review, GitHub tracking, README, and submission packaging
+- **Aditya Arun Kumar** - Back-End Lead: API design, authentication flow, session handling, and controller review
+- **Fisher Matichuk** - Front-End Lead: front-end integration, page workflow, responsive behavior, and JavaScript review
+- **Noor Ehsan** - Database Lead: normalized schema, constraints, database query review, and data integrity checks
+- **Jana Nazer** - Documentation Lead: activity blog, final documentation, and report review
+- **Rida Shahid** - Testing / QA Lead: test plan, validation testing, and workflow verification
+- **Tahmina Faez** - UI/UX Support: visual consistency, accessibility review, and wireframe alignment
+- **Rafay Khan** - GitHub / Kanban Support: task ownership, status movement, and project board maintenance
+- **Sahil Minhas** - Reports Support: summary queries, category aggregation, and demo preparation
+- **Ravishan Thanarajah** - Review Support: clean-machine setup review, contribution summary, and final packaging check
 
-```text
-docs/milestone02-database-design.pdf
-```
+## Final Project Links
 
-## Team Member Contributions Summary
-
-- Thesopan Sathiyanantham - Scrum Master / Project Coordinator: milestone coordination, GitHub tracking, workflow review and README
-- Aditya Arun Kumar - Back-End Lead: backend skeleton planning and route/controller structure
-- Fisher Matichuk - Front-End Lead: front-end screen layout and navigation workflow
-- Noor Ehsan - Database Lead: database schema and ERD planning, Review Support: README review and final packaging check
-- Jana Nazer - Documentation / Activity Blog Lead: activity blog and documentation updates
-- Rida Shahid - Testing / QA Lead: validation checks and front-end workflow review
-- Tahmina Faez - UI/UX and Wireframe Support: UI consistency and screen matching
-- Rafay Khan - GitHub / Kanban Support: Kanban updates and task status tracking
-- Sahil Minhas - Reports / Summary Feature Support: reports page and summary workflow review. Kanban and acitivty blog updates
-
-## Notes for Milestone 03
-
-Milestone 03 should connect the front-end forms to the Node.js backend and MySQL database. Server-side validation, authentication, CRUD database queries, testing evidence, and final demo preparation will be completed in the next milestone.
+See `links.txt` for the GitHub repository, GitHub Project board, and activity blog links.

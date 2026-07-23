@@ -1,6 +1,10 @@
 const controller = require('../controllers/authController');
-module.exports = (req, res, sendJson) => {
-  if (req.method === 'POST' && req.url.startsWith('/api/auth/login')) return controller.login(req, res, sendJson);
-  if (req.method === 'POST' && req.url.startsWith('/api/auth/register')) return controller.register(req, res, sendJson);
-  return sendJson(res, 404, { error: 'Auth route not found' });
+
+module.exports = async context => {
+  const { method, pathname } = context;
+  if (method === 'POST' && pathname === '/api/auth/register') return controller.register(context);
+  if (method === 'POST' && pathname === '/api/auth/login') return controller.login(context);
+  if (method === 'POST' && pathname === '/api/auth/logout') return controller.logout(context);
+  if (method === 'GET' && pathname === '/api/auth/session') return controller.session(context);
+  return false;
 };

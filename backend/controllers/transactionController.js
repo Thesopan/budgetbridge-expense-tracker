@@ -1,17 +1,37 @@
-const sampleTransactions = [
-  { id: 1, type: 'income', category: 'Income', amount: 1250.00, transactionDate: '2026-06-12', description: 'Paycheque' },
-  { id: 2, type: 'expense', category: 'Rent', amount: 820.00, transactionDate: '2026-06-10', description: 'Rent payment' }
-];
+const validation = require('../utils/validation');
+const { AppError } = require('../utils/errors');
 
-exports.list = (req, res, sendJson) => sendJson(res, 200, { success: true, transactions: sampleTransactions });
-
-exports.create = (req, res, sendJson) => {
-  const { type, categoryId, amount, transactionDate, description } = req.body;
-  if (!['income', 'expense'].includes(type) || Number(amount) <= 0 || !transactionDate) {
-    return sendJson(res, 400, { success: false, message: 'Type, positive amount, and date are required.' });
-  }
-  return sendJson(res, 201, { success: true, message: 'Create transaction endpoint stub successful.', transaction: { id: 3, type, categoryId, amount, transactionDate, description } });
+exports.list = async context => {
+  const filters = validation.filters(context.query);
+  const transactions = await context.store.listTransactions(context.user.userId, filters);
+  context.sendJson(200, { success: true, transactions });
 };
 
-exports.update = (req, res, sendJson) => sendJson(res, 200, { success: true, message: 'Update transaction endpoint stub successful.', id: req.query.id || null });
-exports.remove = (req, res, sendJson) => sendJson(res, 200, { success: true, message: 'Delete transaction endpoint stub successful.', id: req.query.id || null });
+exports.get = async context => {
+  const transactionId = validation.id(context.params.id, 'Transaction');
+  const transaction = await context.store.getTransaction(context.user.userId, transactionId);
+  if (!transaction) throw new AppError(404, 'Transaction not found.', 'NOT_FOUND');
+  context.sendJson(200, { success: true, transaction });
+};
+
+exports.create = async context => {
+  const input = validation.transaction(context.body);
+  const transaction = await context.store.createTransaction(context.user.userId, input);
+  await context.store.logActivity(context.user.userId, 'CREATE_TRANSACTION', `Created transaction ${transaction.transactionId}.`);
+  context.sendJson(201, { success: true, transaction, message: 'Transaction created.' });
+};
+
+exports.update = async context => {
+  const transactionId = validation.id(context.params.id, 'Transaction');
+  const input = validation.transaction(context.body);
+  const transaction = await context.store.updateTransaction(context.user.userId, transactionId, input);
+  await context.store.logActivity(context.user.userId, 'UPDATE_TRANSACTION', `Updated transaction ${transactionId}.`);
+  context.sendJson(200, { success: true, transaction, message: 'Transaction updated.' });
+};
+
+exports.remove = async context => {
+  const transactionId = validation.id(context.params.id, 'Transaction');
+  await context.store.deleteTransaction(context.user.userId, transactionId);
+  await context.store.logActivity(context.user.userId, 'DELETE_TRANSACTION', `Deleted transaction ${transactionId}.`);
+  context.sendJson(200, { success: true, message: 'Transaction deleted.' });
+};

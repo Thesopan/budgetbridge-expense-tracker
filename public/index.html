@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - BudgetBridge</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="auth-page">
-  <section class="auth-card">
-    <div class="logo-row">
-      <div class="logo-mark">BB</div>
-      <div class="logo-text"><strong>BudgetBridge</strong><span>Personal Expense Tracker</span></div>
-    </div>
-    <h1>Welcome Back</h1>
-    <p>Login to continue to your expense tracker dashboard.</p>
-    <form id="loginForm">
-      <div class="form-group"><label for="email">Email</label><input id="email" type="email" placeholder="Enter your email" required></div>
-      <div class="form-group"><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login - BudgetBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="auth-page" data-page="login">
+  <main class="auth-card">
+    <div class="logo-row"><div class="logo-mark">BB</div><div class="logo-text"><strong>BudgetBridge</strong><span>Personal Expense Tracker</span></div></div>
+    <h1>Welcome Back</h1><p>Log in to view and manage your personal finances.</p>
+    <form id="loginForm" novalidate>
+      <div class="form-group"><label for="email">Email</label><input id="email" type="email" autocomplete="email" maxlength="150" required></div>
+      <div class="form-group"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" maxlength="128" required></div>
       <button class="btn btn-primary btn-full" type="submit">Login</button>
-      <div id="authMessage" class="error-text"></div>
+      <div id="authMessage" class="message" role="status" aria-live="polite"></div>
     </form>
-    <div class="link-line">Don't have an account? <a href="register.html">Register</a></div>
-  </section>
-  <script src="js/app.js"></script>
-</body>
-</html>
+    <div class="link-line">Do not have an account? <a href="register.html">Register</a></div>
+  </main><script src="js/app.js"></script>
+</body></html>

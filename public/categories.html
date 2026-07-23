@@ -1,88 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories - BudgetBridge</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="app-shell">
-        <aside class="sidebar">
-            <div class="logo-row">
-                <div class="logo-mark">BB</div>
-                <div class="logo-text">
-                    <strong>BudgetBridge</strong>
-                    <span>Personal Expense Tracker</span>
-                </div>
-            </div>
-
-            <nav class="nav-list">
-                <a class="nav-link" href="dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
-                <a class="nav-link" href="transactions.html"><span class="nav-icon">☷</span>Transactions</a>
-                <a class="nav-link active" href="categories.html"><span class="nav-icon">◴</span>Categories</a>
-                <a class="nav-link" href="reports.html"><span class="nav-icon">▥</span>Reports</a>
-                <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
-            </nav>
-
-            <div class="logout-block">
-                <button class="btn btn-secondary btn-full" onclick="logout()">Logout</button>
-            </div>
-        </aside>
-
-        <main class="main">
-            <header class="topbar">
-                <div class="page-title">
-                    <h1>Categories</h1>
-                    <p>Create and manage categories used in transaction forms.</p>
-                </div>
-            </header>
-
-            <section class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h2>Add Category</h2>
-                            <p>Custom categories help organize spending.</p>
-                        </div>
-                    </div>
-
-                    <form id="categoryForm">
-                        <div class="form-group">
-                            <label for="newCategory">Category Name</label>
-                            <input
-                                id="newCategory"
-                                type="text"
-                                placeholder="Example: Subscriptions"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="categoryType">Category Type</label>
-                            <select id="categoryType">
-                                <option value="expense">Expense</option>
-                                <option value="income">Income</option>
-                            </select>
-                        </div>
-
-                        <button class="btn btn-primary" type="submit">Add Category</button>
-                    </form>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h2>Current Categories</h2>
-                            <p>Default and custom categories.</p>
-                        </div>
-                    </div>
-
-                    <div id="categoryList" class="category-list"></div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="js/app.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Categories - BudgetBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="categories" data-protected="true"><div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="logo-row"><div class="logo-mark">BB</div><div class="logo-text"><strong>BudgetBridge</strong><span>Personal Expense Tracker</span></div></div>
+  <nav class="nav-list" aria-label="Main navigation">
+    <a class="nav-link " href="dashboard.html"><span class="nav-icon">D</span>Dashboard</a>
+    <a class="nav-link " href="transactions.html"><span class="nav-icon">T</span>Transactions</a>
+    <a class="nav-link active" href="categories.html"><span class="nav-icon">C</span>Categories</a>
+    <a class="nav-link " href="reports.html"><span class="nav-icon">R</span>Reports</a>
+    <a class="nav-link " href="settings.html"><span class="nav-icon">S</span>Settings</a>
+  </nav>
+  <div class="sidebar-user"><span>Signed in as</span><strong data-user-name>User</strong></div>
+  <button class="btn btn-secondary btn-full" data-action="logout" type="button">Logout</button>
+</aside>
+<main class="main"><header class="topbar"><button class="mobile-menu" data-action="menu" type="button">Menu</button><div class="page-title"><h1>Categories</h1><p>Create and manage categories used by transactions.</p></div></header>
+<section class="grid-2"><div class="card"><h2>Add Custom Category</h2><p>Default categories are protected; custom categories can be edited or deleted.</p><form id="categoryForm" class="stack-form" novalidate><div class="form-group"><label for="newCategory">Category Name</label><input id="newCategory" maxlength="80" required></div><div class="form-group"><label for="categoryType">Category Type</label><select id="categoryType"><option value="expense">Expense</option><option value="income">Income</option></select></div><button class="btn btn-primary" type="submit">Add Category</button><div id="categoryMessage" class="message" role="status" aria-live="polite"></div></form></div>
+<div class="card"><div class="card-header"><div><h2>Current Categories</h2><p>Categories belong only to your account.</p></div></div><div id="categoryList" class="category-list"></div></div></section>
+<div class="modal-backdrop" id="categoryModal" aria-hidden="true"><div class="modal"><h2>Edit Category</h2><form id="editCategoryForm" class="stack-form"><input id="editCategoryId" type="hidden"><div class="form-group"><label for="editCategoryName">Name</label><input id="editCategoryName" maxlength="80" required></div><div class="form-group"><label for="editCategoryType">Type</label><select id="editCategoryType"><option value="expense">Expense</option><option value="income">Income</option></select></div><div class="modal-actions"><button class="btn btn-secondary" id="cancelCategoryEdit" type="button">Cancel</button><button class="btn btn-primary" type="submit">Save</button></div></form></div></div>
+</main></div><script src="js/app.js"></script></body></html>

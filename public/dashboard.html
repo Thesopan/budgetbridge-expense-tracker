@@ -1,110 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - BudgetBridge</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="app-shell">
-        <aside class="sidebar">
-            <div class="logo-row">
-                <div class="logo-mark">BB</div>
-                <div class="logo-text">
-                    <strong>BudgetBridge</strong>
-                    <span>Personal Expense Tracker</span>
-                </div>
-            </div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard - BudgetBridge</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="dashboard" data-protected="true"><div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="logo-row"><div class="logo-mark">BB</div><div class="logo-text"><strong>BudgetBridge</strong><span>Personal Expense Tracker</span></div></div>
+  <nav class="nav-list" aria-label="Main navigation">
+    <a class="nav-link active" href="dashboard.html"><span class="nav-icon">D</span>Dashboard</a>
+    <a class="nav-link " href="transactions.html"><span class="nav-icon">T</span>Transactions</a>
+    <a class="nav-link " href="categories.html"><span class="nav-icon">C</span>Categories</a>
+    <a class="nav-link " href="reports.html"><span class="nav-icon">R</span>Reports</a>
+    <a class="nav-link " href="settings.html"><span class="nav-icon">S</span>Settings</a>
+  </nav>
+  <div class="sidebar-user"><span>Signed in as</span><strong data-user-name>User</strong></div>
+  <button class="btn btn-secondary btn-full" data-action="logout" type="button">Logout</button>
+</aside>
 
-            <nav class="nav-list">
-                <a class="nav-link active" href="dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
-                <a class="nav-link" href="transactions.html"><span class="nav-icon">☷</span>Transactions</a>
-                <a class="nav-link" href="categories.html"><span class="nav-icon">◴</span>Categories</a>
-                <a class="nav-link" href="reports.html"><span class="nav-icon">▥</span>Reports</a>
-                <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
-            </nav>
-
-            <div class="logout-block">
-                <button class="btn btn-secondary btn-full" onclick="logout()">Logout</button>
-            </div>
-        </aside>
-
-        <main class="main">
-            <header class="topbar">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                    <p>Overview of income, expenses, balance, and recent activity.</p>
-                </div>
-                <a class="btn btn-primary" href="add-transaction.html">+ Add Transaction</a>
-            </header>
-
-            <section class="grid-3">
-                <div class="card stat-card">
-                    <div class="stat-icon">↓</div>
-                    <div>
-                        <small>Total Income</small>
-                        <h2 id="totalIncome">$0.00</h2>
-                    </div>
-                </div>
-
-                <div class="card stat-card">
-                    <div class="stat-icon">↑</div>
-                    <div>
-                        <small>Total Expenses</small>
-                        <h2 id="totalExpenses">$0.00</h2>
-                    </div>
-                </div>
-
-                <div class="card stat-card">
-                    <div class="stat-icon">$</div>
-                    <div>
-                        <small>Balance</small>
-                        <h2 id="balance">$0.00</h2>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card" style="margin-top:18px;">
-                <div class="card-header">
-                    <div>
-                        <h2>Recent Transactions</h2>
-                        <p>Newest transactions are shown first.</p>
-                    </div>
-                    <a class="btn btn-soft" href="transactions.html">View All</a>
-                </div>
-
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Description</th>
-                                <th>Category</th>
-                                <th>Type</th>
-                                <th>Amount</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recentTransactions"></tbody>
-                    </table>
-                </div>
-            </section>
-
-            <div id="deleteModal" class="modal-backdrop">
-                <div class="modal">
-                    <h2>Delete Transaction?</h2>
-                    <p>This action cannot be undone.</p>
-
-                    <div class="modal-actions">
-                        <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
-                        <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="js/app.js"></script>
-</body>
-</html>
+<main class="main"><header class="topbar"><button class="mobile-menu" data-action="menu" type="button" aria-label="Open navigation">Menu</button><div class="page-title"><h1>Dashboard</h1><p>Overview of income, expenses, balance, and recent activity.</p></div><a class="btn btn-primary" href="add-transaction.html">+ Add Transaction</a></header>
+<section class="grid-3"><div class="card stat-card income"><small>Total Income</small><h2 id="totalIncome">$0.00</h2></div><div class="card stat-card expense"><small>Total Expenses</small><h2 id="totalExpenses">$0.00</h2></div><div class="card stat-card balance"><small>Balance</small><h2 id="balance">$0.00</h2></div></section>
+<section class="card"><div class="card-header"><div><h2>Recent Transactions</h2><p>Newest transactions are shown first.</p></div><a class="btn btn-soft" href="transactions.html">View All</a></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Type</th><th>Amount</th></tr></thead><tbody id="recentTransactions"></tbody></table></div><div id="dashboardMessage" class="message" role="status"></div></section>
+</main></div><script src="js/app.js"></script></body></html>

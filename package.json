@@ -1,12 +1,20 @@
 {
   "name": "budgetbridge-expense-tracker",
-  "version": "2.0.0",
-  "description": "CP476B Milestone 02 BudgetBridge personal expense tracker front-end and backend skeleton.",
+  "version": "3.0.0",
+  "description": "CP476B Group 6 final full-stack personal expense tracker.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "start:memory": "node backend/server.js --memory",
+    "test": "node --test tests/*.test.js"
   },
-  "keywords": ["cp476", "expense-tracker", "node", "mysql"],
+  "keywords": ["cp476", "expense-tracker", "node", "mysql", "full-stack"],
   "author": "CP476B Group 6",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "mysql2": "^3.11.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
