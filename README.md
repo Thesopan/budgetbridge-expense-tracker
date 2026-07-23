@@ -4,6 +4,31 @@
 
 BudgetBridge is a full-stack personal expense tracker for students and young adults. Users can create an account, record income and expenses, organize transactions by category, search and filter records, and generate financial summaries. The final application connects a plain HTML/CSS/JavaScript front end to a Node.js API and a MySQL relational database.
 
+## Screenshots
+
+<table width="100%">
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/login.png" width="95%"><br>
+      <b>Login</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/dashboard.png" width="95%"><br>
+      <b>Dashboard</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/categories.png" width="95%"><br>
+      <b>Categories</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/reports.png" width="95%"><br>
+      <b>Reports</b>
+    </td>
+  </tr>
+</table>
+
 ## Final Status
 
 - MySQL database created successfully with five tables
