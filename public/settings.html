@@ -1,18 +1,142 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Settings - BudgetBridge</title><link rel="stylesheet" href="css/style.css"></head>
-<body data-page="settings" data-protected="true"><div class="app-shell">
-<aside class="sidebar" id="sidebar">
-  <div class="logo-row"><div class="logo-mark">BB</div><div class="logo-text"><strong>BudgetBridge</strong><span>Personal Expense Tracker</span></div></div>
-  <nav class="nav-list" aria-label="Main navigation">
-    <a class="nav-link " href="dashboard.html"><span class="nav-icon">D</span>Dashboard</a>
-    <a class="nav-link " href="transactions.html"><span class="nav-icon">T</span>Transactions</a>
-    <a class="nav-link " href="categories.html"><span class="nav-icon">C</span>Categories</a>
-    <a class="nav-link " href="reports.html"><span class="nav-icon">R</span>Reports</a>
-    <a class="nav-link active" href="settings.html"><span class="nav-icon">S</span>Settings</a>
-  </nav>
-  <div class="sidebar-user"><span>Signed in as</span><strong data-user-name>User</strong></div>
-  <button class="btn btn-secondary btn-full" data-action="logout" type="button">Logout</button>
-</aside>
-<main class="main"><header class="topbar"><button class="mobile-menu" data-action="menu" type="button">Menu</button><div class="page-title"><h1>Account Settings</h1><p>Update your profile and password securely.</p></div></header>
-<section class="grid-2"><div class="card"><h2>Profile</h2><form id="profileForm" class="stack-form"><div class="form-group"><label for="settingsName">Full Name</label><input id="settingsName" maxlength="100" required></div><div class="form-group"><label for="settingsEmail">Email</label><input id="settingsEmail" type="email" maxlength="150" required></div><button class="btn btn-primary" type="submit">Save Profile</button><div id="profileMessage" class="message" role="status"></div></form></div>
-<div class="card"><h2>Change Password</h2><form id="passwordForm" class="stack-form"><div class="form-group"><label for="currentPassword">Current Password</label><input id="currentPassword" type="password" autocomplete="current-password" required></div><div class="form-group"><label for="newPassword">New Password</label><input id="newPassword" type="password" autocomplete="new-password" required><small>At least 8 characters with uppercase, lowercase, and a number.</small></div><div class="form-group"><label for="confirmNewPassword">Confirm New Password</label><input id="confirmNewPassword" type="password" autocomplete="new-password" required></div><button class="btn btn-primary" type="submit">Update Password</button><div id="passwordMessage" class="message" role="status"></div></form></div></section>
-</main></div><script src="js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - BudgetBridge</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="settings" data-protected="true">
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-row">
+                <div class="logo-mark">BB</div>
+
+                <div class="logo-text">
+                    <strong>BudgetBridge</strong>
+                    <span>Personal Expense Tracker</span>
+                </div>
+            </div>
+
+            <nav class="nav-list" aria-label="Main navigation">
+                <a class="nav-link " href="dashboard.html"><span class="nav-icon">D</span>Dashboard</a>
+                <a class="nav-link " href="transactions.html"><span class="nav-icon">T</span>Transactions</a>
+                <a class="nav-link " href="categories.html"><span class="nav-icon">C</span>Categories</a>
+                <a class="nav-link " href="reports.html"><span class="nav-icon">R</span>Reports</a>
+                <a class="nav-link active" href="settings.html"><span class="nav-icon">S</span>Settings</a>
+            </nav>
+
+            <div class="sidebar-user">
+                <span>Signed in as</span>
+                <strong data-user-name>User</strong>
+            </div>
+
+            <button class="btn btn-secondary btn-full" data-action="logout" type="button">
+                Logout
+            </button>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="mobile-menu" data-action="menu" type="button">
+                    Menu
+                </button>
+
+                <div class="page-title">
+                    <h1>Account Settings</h1>
+                    <p>Update your profile and password securely.</p>
+                </div>
+            </header>
+
+            <section class="grid-2">
+                <div class="card">
+                    <h2>Profile</h2>
+
+                    <form id="profileForm" class="stack-form">
+                        <div class="form-group">
+                            <label for="settingsName">Full Name</label>
+
+                            <input
+                                id="settingsName"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="settingsEmail">Email</label>
+
+                            <input
+                                id="settingsEmail"
+                                type="email"
+                                maxlength="150"
+                                required
+                            >
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">
+                            Save Profile
+                        </button>
+
+                        <div id="profileMessage" class="message" role="status"></div>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Change Password</h2>
+
+                    <form id="passwordForm" class="stack-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+
+                            <input
+                                id="currentPassword"
+                                type="password"
+                                autocomplete="current-password"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+
+                            <input
+                                id="newPassword"
+                                type="password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <small>
+                                At least 8 characters with uppercase, lowercase, and a number.
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password</label>
+
+                            <input
+                                id="confirmNewPassword"
+                                type="password"
+                                autocomplete="new-password"
+                                required
+                            >
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">
+                            Update Password
+                        </button>
+
+                        <div id="passwordMessage" class="message" role="status"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
